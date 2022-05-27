@@ -33,8 +33,8 @@
 (Note: You have to use all the following function .all(), .get(), .delete(), and .save())
 
 - templates:
-    # empty:
+    ### empty:
     - form.html
     - jewelry_view.html
-    # not used
+    ### not used
     - edit.html
