@@ -1,0 +1,42 @@
+ {% extends 'base.html' %}
+ {% load static %}
+{% block title%}Jewelries{% endblock %}
+
+  {% block content %}
+
+ <!-- based on category this div changes-->
+<div class="card bg-dark text-white">
+  <img src="..." class="card-img" alt="...">
+  <div class="card-img-overlay">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+    <p class="card-text">Last updated 3 mins ago</p>
+  </div>
+</div>
+ <!-- category div end -->
+
+ <!-- jewelries based on category-->
+
+ <div class="row row-cols-1 row-cols-md-3 g-4">
+  <div class="col">
+    {% if j_list%}
+    {% for j in j_list%}
+    <div class="card">
+      <img src="{{j.j_photo.url}}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{j.name}}</h5>
+        <p class="card-text">{{j.description}}</p>
+       <h5 class="card-title">{{j.designer}}</h5> <!-- link to designer page-->
+       <h5 class="card-title" align="right">{{j.price}} SR </h5>
+      </div>
+    </div>
+  </div>
+   {% endfor %}
+    {%else%}
+    <p> No products </p>
+    {% endif %}
+
+</div>
+
+
+ {% endblock %}
